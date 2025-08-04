@@ -14,7 +14,7 @@ clean:
 	rm -f *.db
 
 $(TARGET): $(OBJ)
-	gcc -o $@ $?
+	gcc -o $@ $? -ggdb
 
 obj/%.o : src/%.c
-	gcc -c $< -o $@ -Iinclude
+	gcc -g -c -Werror $< -o $@ -Iinclude
